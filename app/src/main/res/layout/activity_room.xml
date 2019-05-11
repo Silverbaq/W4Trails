@@ -7,32 +7,45 @@
         android:layout_height="match_parent"
         tools:context=".room.RoomActivity">
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:inputType="textPersonName"
-            android:hint="Name"
-            android:ems="10"
-            android:id="@+id/etName" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
-    <EditText
+            android:hint="Name" android:id="@+id/first" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/etName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="info"
-            android:ems="10"
-            android:id="@+id/etInfo" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/etName" android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_height="45dp"
+            android:hint="info" android:id="@+id/second" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/etInfo"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
             android:text="Insert"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnInsert" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/etInfo" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/second" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"/>
     <androidx.recyclerview.widget.RecyclerView
