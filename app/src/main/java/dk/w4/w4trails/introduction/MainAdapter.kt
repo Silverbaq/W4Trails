@@ -1,16 +1,20 @@
 package dk.w4.w4trails.introduction
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dk.w4.w4trails.R
+import dk.w4.w4trails.room.RoomActivity
+import dk.w4.w4trails.utils.Constants
 import kotlinx.android.synthetic.main.mainadapterlayout.view.*
 
 class MainAdapter(private val values: Array<String>) : RecyclerView.Adapter<MainAdapter.SimpleViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.mainadapterlayout, parent, false)
-        return SimpleViewHolder(view)
+        return SimpleViewHolder(parent.context, view)
     }
 
     override fun getItemCount(): Int {
@@ -23,10 +27,21 @@ class MainAdapter(private val values: Array<String>) : RecyclerView.Adapter<Main
     }
 
 
-    class SimpleViewHolder(val view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    class SimpleViewHolder(val context: Context, val view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+
+        init {
+            view.setOnClickListener(this)
+        }
+
 
         override fun onClick(p0: View?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            when (p0?.tvMainAdapterLayout?.text.toString()) {
+                Constants.MAIN_ADAPTER_ROOM -> {
+                    val intent = Intent(context, RoomActivity::class.java)
+                    context.startActivity(intent)
+                }
+            }
+
         }
 
     }

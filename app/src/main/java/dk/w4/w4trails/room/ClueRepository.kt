@@ -19,7 +19,7 @@ class ClueRepository(private val applicationContext: Context) {
         return db.clueDao().getClueByName(name)
     }
 
-    fun insertClue(clue: Clue) {
+    suspend fun insertClue(clue: Clue) {
         db.clueDao().insertClue(clue)
     }
 

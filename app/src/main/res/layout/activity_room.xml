@@ -7,4 +7,39 @@
         android:layout_height="match_parent"
         tools:context=".room.RoomActivity">
 
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:inputType="textPersonName"
+            android:hint="Name"
+            android:ems="10"
+            android:id="@+id/etName" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="info"
+            android:ems="10"
+            android:id="@+id/etInfo" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/etName" android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+            android:text="Insert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnInsert" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/etInfo" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnInsert" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/rvClues" app:layout_constraintVertical_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
